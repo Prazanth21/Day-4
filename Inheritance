@@ -1,0 +1,41 @@
+// Inheritance
+using System;
+
+
+class Vehicle
+{
+    public string Brand { get; set; }
+    public int year { get; set; }
+
+    public void Display() 
+    {
+        Console.WriteLine($"Brand : {Brand}\n year : {year} ");
+    }
+
+    class Car : Vehicle
+    {
+        public string Model { get; set; }
+
+        public void Showd() 
+        {
+            Console.WriteLine($"Model : {Model}\n Brand : {Brand}\n Year : {year}");
+        }
+    }
+    class Program 
+    {
+        public static void Main() 
+        {
+            Car obj = new Car();
+            obj.Model = "suv";
+            obj.Brand = "Toyata";
+            obj.year = 1990;
+            obj.Showd();
+
+        }
+    }
+}
+
+
+/*Model : suv
+  Brand : Toyata
+  Year : 1990 */
