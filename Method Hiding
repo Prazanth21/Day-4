@@ -1,0 +1,39 @@
+using System;
+
+class BaseClass
+{
+    public void Display() 
+    {
+        Console.WriteLine("Base class method");
+    }
+
+}
+class DerivedClass : BaseClass
+{
+    public void Display()
+    {
+        Console.WriteLine("Derived class method");
+    }
+
+}
+class Program 
+{
+    public static void Main() 
+    {
+        BaseClass base_obj = new BaseClass();
+        Console.Write("calling base class Method : ");
+        base_obj.Display();
+        Console.WriteLine();
+
+        DerivedClass derived_obj = new DerivedClass();
+        Console.Write("calling derived class Method : ");
+        derived_obj.Display();
+
+    }
+}
+
+
+/*calling base class Method : Base class method
+
+calling derived class Method : Derived class method
+ */
