@@ -1,0 +1,60 @@
+//multilevel
+
+using System;
+using System.Reflection;
+
+class Vehicle 
+{
+    public string Brand { get; set; }
+    public int Year { get; set; }
+
+    public void DisplayV() 
+    {
+        Console.WriteLine($"Brand : {Brand}  Year : {Year}   ");
+    }
+    
+}
+class Car : Vehicle 
+{
+    public string Model { get; set; }
+
+    public void DisplayC() 
+    {
+        Console.WriteLine($"Brand : {Brand}  Year : {Year}  Model : {Model} ");
+    }
+
+}
+
+class Electric : Car
+{
+    public int Battery { get; set; }
+
+    public void DisplayE() 
+    {
+        Console.WriteLine($"Brand : {Brand}  Year : {Year}  Model : {Model}  Battery : {Battery} Kwh ");
+    }
+    
+}
+class Program 
+{
+    public static void  Main() 
+    {
+        Electric myelectric = new Electric();
+
+        myelectric.Brand = "Tesla ";
+        myelectric.Year = 2025;
+        myelectric.Model = "modern s3";
+        myelectric.Battery = 75;
+
+        myelectric.DisplayV();
+        myelectric.DisplayC();
+        myelectric.DisplayE();
+
+    }
+}
+
+/*
+ * Brand : Tesla   Year : 2025
+Brand : Tesla   Year : 2025  Model : modern s3
+Brand : Tesla   Year : 2025  Model : modern s3  Battery : 75 Kwh
+*/
