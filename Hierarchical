@@ -1,0 +1,87 @@
+Hierarchical
+
+using System;
+
+
+class Employee
+{
+    public string Name {get;set;}
+    public string Address { get; set; }
+
+    public void Display() 
+    {
+        Console.WriteLine($"name : {Name} \n Address : {Address}");
+    }
+}
+class Regular_Emp : Employee 
+{
+    public int salery { get; set; }
+
+    public void Display_Reg() 
+    {
+        Console.WriteLine($"name : {Name}\n Address : {Address} \n Salery : {salery}");
+    }
+
+}
+
+class contract_emp : Employee
+{
+    public int Hourly_Pay { get; set; }
+
+    public int Hours_worked { get; set; }
+
+    
+
+    public void Display_Con() 
+    {
+
+        double Total = Hourly_Pay * Hours_worked;
+        Console.WriteLine($"name : {Name} \n Address : {Address} \n Salery : {Total}");
+    }
+
+}
+
+class Program 
+{
+    public static void Main() 
+    {
+        Regular_Emp reg = new Regular_Emp();
+        {
+            reg.Name = "Prasanth G";
+            reg.Address ="Yelagiri Hills";
+            reg.salery = 10000;
+        };
+
+        
+
+        contract_emp contract = new contract_emp();
+        {
+            contract.Name = "Sachin ";
+            contract.Address = "yelagiri hills ";
+            contract.Hourly_Pay = 1500;
+            contract.Hours_worked = 8 ;
+        }
+        Console.WriteLine("Regular Employees: ");
+        reg.Display();
+
+        Console.WriteLine("\n \n ");
+
+        Console.WriteLine("Contract Employees: ");
+        contract.Display_Con();
+
+    }
+}
+
+/*
+ * Regular Employees:
+name : Prasanth G
+ Address : Yelagiri Hills
+
+
+
+Contract Employees:
+name : Sachin
+ Address : yelagiri hills
+ Salery : 12000
+
+ */
